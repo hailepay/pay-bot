@@ -79,12 +79,13 @@ async def verify_photo(update: Update, context: ContextTypes.DEFAULT_TYPE):
 def run_flask():
     app.run(host='0.0.0.0', port=5000)
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # Run Webhook in background
     threading.Thread(target=run_flask, daemon=True).start()
-    
+
     # Run Telegram Bot
-    bot_token = os.environ.get("BOT_TOKEN", "")
+    bot_token = "8564504241:AAHMeiAcIhinYP-1f1ER_WuWRktTnPjxVM4".strip()
     application = ApplicationBuilder().token(bot_token).build()
     application.add_handler(MessageHandler(filters.PHOTO, verify_photo))
     application.run_polling()
+
