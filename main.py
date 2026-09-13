@@ -83,8 +83,8 @@ if __name__ == "__main__":
     # Run Webhook in background
     threading.Thread(target=run_flask, daemon=True).start()
 
-    # Run Telegram Bot
-    bot_token = "8564504241:AAHMeiAcIhinYP-1f1ER_WuWRktTnPjxVM4".strip()
+        # Run Telegram Bot
+    bot_token = "8564504241:AAE09419EqW_vD09xdXW7C1s2aDuT7eZknk".strip()
     application = ApplicationBuilder().token(bot_token).build()
     application.add_handler(MessageHandler(filters.PHOTO, verify_photo))
     application.run_polling()
